@@ -1,0 +1,294 @@
+<?xml version="1.0" ?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1260" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <style>.fade-in{animation:fadeIn .6s ease-out both}
+.slide-up{animation:slideUp .5s ease-out both}
+.bar-grow{animation:barGrow .8s ease-out both}
+.pulse{animation:pulse 2.5s ease-in-out infinite}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes barGrow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}</style>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="ma" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#238636"/>
+      <stop offset="100%" stop-color="#2ea043"/>
+    </linearGradient>
+    <linearGradient id="mb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f6feb"/>
+      <stop offset="100%" stop-color="#388bfd"/>
+    </linearGradient>
+    <linearGradient id="mc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8957e5"/>
+      <stop offset="100%" stop-color="#a371f7"/>
+    </linearGradient>
+    <linearGradient id="glm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d29922"/>
+      <stop offset="100%" stop-color="#e3b341"/>
+    </linearGradient>
+    <linearGradient id="ds" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f6feb"/>
+      <stop offset="100%" stop-color="#388bfd"/>
+    </linearGradient>
+    <linearGradient id="mm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8957e5"/>
+      <stop offset="100%" stop-color="#a371f7"/>
+    </linearGradient>
+    <linearGradient id="danger" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#da3633"/>
+      <stop offset="100%" stop-color="#f85149"/>
+    </linearGradient>
+    <linearGradient id="success" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#055d20"/>
+      <stop offset="100%" stop-color="#2ea043"/>
+    </linearGradient>
+    <filter id="sh">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity=".4"/>
+    </filter>
+    <filter id="sf">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000" flood-opacity=".2"/>
+    </filter>
+    <filter id="glow">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#000" flood-opacity=".6"/>
+    </filter>
+  </defs>
+  <rect width="1000" height="1260" rx="14" fill="url(#bg)" stroke="#30363d" stroke-width="1.5"/>
+  <text x="500" y="42" text-anchor="middle" fill="#e6edf3" font-size="20" font-weight="700" Class="fade-in">SKILL.state — Why It Matters + Benchmarks</text>
+  <rect x="24" y="60" width="952" height="56" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1" Class="slide-up" style="animation-delay:0.1s"/>
+  <text x="500" y="80" text-anchor="middle" fill="#8b949e" font-size="13" font-family="monospace">A_t = ( P , Σ_t , O_t )  →  ( R_t , ΔΣ_t , a_t )</text>
+  <text x="500" y="100" text-anchor="middle" fill="#6e7681" font-size="11" font-family="monospace">Σ_{t+1} = Σ_t ⊕ ΔΣ_t    |    O(|P|+|Σ|+|O|) per step, O(T) total    |    Prompt stays FLAT — not O(T²)</text>
+  <rect x="24" y="130" width="311" height="128" rx="10" fill="#161b22" stroke="url(#danger)" stroke-width="2" Class="slide-up" style="animation-delay:0.15s"/>
+  <rect x="24" y="130" width="311" height="28" rx="10" fill="url(#danger)"/>
+  <rect x="24" y="148" width="311" height="10" fill="url(#danger)"/>
+  <text x="179" y="150" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">ReAct — Transcript Accumulation</text>
+  <rect x="32" y="164" width="98" height="16" rx="2" fill="#30363d"/>
+  <text x="81" y="176" text-anchor="middle" fill="#484f58" font-size="8" font-weight="400">P</text>
+  <rect x="131" y="164" width="97" height="16" rx="2" fill="#2a0d0d"/>
+  <text x="179" y="176" text-anchor="middle" fill="#f85149" font-size="8" font-weight="600">all T-1 turns</text>
+  <rect x="229" y="164" width="97" height="16" rx="2" fill="#30363d"/>
+  <text x="277" y="176" text-anchor="middle" fill="#484f58" font-size="8" font-weight="400">O</text>
+  <text x="32" y="193" fill="#8b949e" font-size="8">Appends EVERY observation + action.</text>
+  <text x="32" y="207" fill="#8b949e" font-size="8">Model re-reads all prior turns.</text>
+  <text x="32" y="221" fill="#8b949e" font-size="8">6,599 chars/turn at T=50.</text>
+  <text x="32" y="242" fill="#f85149" font-size="8" font-weight="700">7.5× growth, old context OUTVOTES new.</text>
+  <rect x="344" y="130" width="311" height="128" rx="10" fill="#161b22" stroke="url(#danger)" stroke-width="2" Class="slide-up" style="animation-delay:0.22s"/>
+  <rect x="344" y="130" width="311" height="28" rx="10" fill="url(#danger)"/>
+  <rect x="344" y="148" width="311" height="10" fill="url(#danger)"/>
+  <text x="499" y="150" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Memory — Summary + Window</text>
+  <rect x="352" y="164" width="73" height="16" rx="2" fill="#30363d"/>
+  <text x="388" y="176" text-anchor="middle" fill="#484f58" font-size="8" font-weight="400">P</text>
+  <rect x="426" y="164" width="72" height="16" rx="2" fill="#2a1a0d"/>
+  <text x="462" y="176" text-anchor="middle" fill="#d29922" font-size="8" font-weight="600">summary</text>
+  <rect x="499" y="164" width="72" height="16" rx="2" fill="#3a2010"/>
+  <text x="535" y="176" text-anchor="middle" fill="#e3b341" font-size="8" font-weight="600">last N</text>
+  <rect x="572" y="164" width="72" height="16" rx="2" fill="#30363d"/>
+  <text x="608" y="176" text-anchor="middle" fill="#484f58" font-size="8" font-weight="400">O</text>
+  <text x="352" y="193" fill="#8b949e" font-size="8">Summarizes old turns, keeps window.</text>
+  <text x="352" y="207" fill="#8b949e" font-size="8">Summaries GROW with horizon.</text>
+  <text x="352" y="221" fill="#8b949e" font-size="8">4,729 chars/turn at T=50.</text>
+  <text x="352" y="242" fill="#d29922" font-size="8" font-weight="700">Better than ReAct, but WORSE at T≥200.</text>
+  <rect x="664" y="130" width="311" height="128" rx="10" fill="#161b22" stroke="url(#success)" stroke-width="2" Class="slide-up" style="animation-delay:0.29000000000000004s"/>
+  <rect x="664" y="130" width="311" height="28" rx="10" fill="url(#success)"/>
+  <rect x="664" y="148" width="311" height="10" fill="url(#success)"/>
+  <text x="819" y="150" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">SKILL.state — Structured Σ</text>
+  <rect x="672" y="164" width="98" height="16" rx="2" fill="#30363d"/>
+  <text x="721" y="176" text-anchor="middle" fill="#484f58" font-size="8" font-weight="400">P</text>
+  <rect x="771" y="164" width="97" height="16" rx="2" fill="#0d2a1a"/>
+  <text x="819" y="176" text-anchor="middle" fill="#7ee787" font-size="8" font-weight="600">Σ (small, fixed)</text>
+  <rect x="869" y="164" width="97" height="16" rx="2" fill="#30363d"/>
+  <text x="917" y="176" text-anchor="middle" fill="#484f58" font-size="8" font-weight="400">O</text>
+  <text x="672" y="193" fill="#8b949e" font-size="8">Only P + Σ_t + O_t per turn.</text>
+  <text x="672" y="207" fill="#8b949e" font-size="8">Reasoning destroyed after patch.</text>
+  <text x="672" y="221" fill="#8b949e" font-size="8">1,519 chars/turn at T=50.</text>
+  <text x="672" y="242" fill="#2ea043" font-size="8" font-weight="700">1.031× growth, nearly FLAT. 2.6× less.</text>
+  <g Class="slide-up" style="animation-delay:0.6s">
+    <rect x="24" y="274" width="304" height="150" rx="10" fill="#0d1117" stroke="url(#ma)" stroke-width="2" filter="url(#sh)"/>
+    <rect x="24" y="274" width="304" height="36" rx="10" fill="url(#ma)"/>
+    <rect x="24" y="300" width="304" height="10" fill="url(#ma)"/>
+    <text x="176" y="298" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">Mode A — Build the Loop</text>
+    <text x="176" y="328" text-anchor="middle" fill="#8b949e" font-size="11">LangGraph / LangChain / ~50 LOC</text>
+    <circle cx="44" cy="350" r="4" fill="#2ea043"/>
+    <text x="54" y="354" fill="#2ea043" font-size="10">Bounded prompt: flat O(1)</text>
+    <circle cx="44" cy="366" r="4" fill="#2ea043"/>
+    <text x="54" y="370" fill="#2ea043" font-size="10">4.3× fewer tokens at T=50</text>
+    <circle cx="44" cy="382" r="4" fill="#2ea043"/>
+    <text x="54" y="386" fill="#2ea043" font-size="10">LangGraph reducer = ⊕</text>
+    <circle cx="44" cy="398" r="4" fill="#2ea043"/>
+    <text x="54" y="402" fill="#2ea043" font-size="10">Checkpointer: crash → resume</text>
+  </g>
+  <g Class="slide-up" style="animation-delay:0.7s">
+    <rect x="348" y="274" width="304" height="150" rx="10" fill="#0d1117" stroke="url(#mb)" stroke-width="2" filter="url(#sh)"/>
+    <rect x="348" y="274" width="304" height="36" rx="10" fill="url(#mb)"/>
+    <rect x="348" y="300" width="304" height="10" fill="url(#mb)"/>
+    <text x="500" y="298" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">Mode B — Inside Host CLI</text>
+    <text x="500" y="328" text-anchor="middle" fill="#8b949e" font-size="11">opencode·Cursor·Claude Code·Qwen·OpenClaw·Codex</text>
+    <circle cx="368" cy="350" r="4" fill="#388bfd"/>
+    <text x="378" y="354" fill="#388bfd" font-size="10">0-turn drift recovery</text>
+    <circle cx="368" cy="366" r="4" fill="#388bfd"/>
+    <text x="378" y="370" fill="#388bfd" font-size="10">No re-solving solved problems</text>
+    <circle cx="368" cy="382" r="4" fill="#388bfd"/>
+    <text x="378" y="386" fill="#388bfd" font-size="10">Survives /compact / restart / cron</text>
+    <circle cx="368" cy="398" r="4" fill="#f85149"/>
+    <text x="378" y="402" fill="#f85149" font-size="10">Prompt NOT bounded (host appends)</text>
+  </g>
+  <g Class="slide-up" style="animation-delay:0.8s">
+    <rect x="672" y="274" width="304" height="150" rx="10" fill="#0d1117" stroke="url(#mc)" stroke-width="2" filter="url(#sh)"/>
+    <rect x="672" y="274" width="304" height="36" rx="10" fill="url(#mc)"/>
+    <rect x="672" y="300" width="304" height="10" fill="url(#mc)"/>
+    <text x="824" y="298" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">Mode C — Local MCP Proxy</text>
+    <text x="824" y="328" text-anchor="middle" fill="#8b949e" font-size="11">skillstate.py mcp → run_loop</text>
+    <circle cx="692" cy="350" r="4" fill="#a371f7"/>
+    <text x="702" y="354" fill="#a371f7" font-size="10">1 tool call per episode</text>
+    <circle cx="692" cy="366" r="4" fill="#a371f7"/>
+    <text x="702" y="370" fill="#a371f7" font-size="10">Inner generate=api → O(1)</text>
+    <circle cx="692" cy="382" r="4" fill="#a371f7"/>
+    <text x="702" y="386" fill="#a371f7" font-size="10">Reasoning destroyed in MCP</text>
+    <circle cx="692" cy="398" r="4" fill="#a371f7"/>
+    <text x="702" y="402" fill="#a371f7" font-size="10">Mode A token curve, any CLI host</text>
+  </g>
+  <g Class="slide-up" style="animation-delay:0.9s">
+    <rect x="24" y="440" width="952" height="144" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+    <text x="44" y="468" fill="#e6edf3" font-size="14" font-weight="700">Benchmark — Prompt Growth: 40-shelf warehouse, 54 tasks</text>
+    <text x="44" y="488" fill="#8b949e" font-size="10">SKILL avg: 1,442 chars (1.031× growth). ReAct: 3,795 chars avg (7.5× growth). Every extra char = stale context the model re-reads.</text>
+    <rect x="44" y="500" width="110" height="24" rx="3" fill="#1c2128"/>
+    <text x="99" y="516" text-anchor="middle" fill="#8b949e" font-size="11" font-weight="600">Horizon</text>
+    <rect x="158" y="500" width="150" height="24" rx="3" fill="#0d2a1a"/>
+    <text x="233" y="516" text-anchor="middle" fill="#2ea043" font-size="11" font-weight="600">SKILL.state</text>
+    <rect x="312" y="500" width="148" height="24" rx="3" fill="#1c2128"/>
+    <text x="386" y="516" text-anchor="middle" fill="#f85149" font-size="11" font-weight="600">ReAct</text>
+    <rect x="464" y="500" width="148" height="24" rx="3" fill="#1c2128"/>
+    <text x="538" y="516" text-anchor="middle" fill="#d29922" font-size="11" font-weight="600">Memory</text>
+    <rect x="616" y="500" width="148" height="24" rx="3" fill="#1c2128"/>
+    <text x="690" y="516" text-anchor="middle" fill="#7d8590" font-size="11" font-weight="600">SKILL / ReAct</text>
+    <rect x="768" y="500" width="192" height="24" rx="3" fill="#1c2128"/>
+    <text x="864" y="516" text-anchor="middle" fill="#7d8590" font-size="11" font-weight="600">What This Means</text>
+    <rect x="44" y="528" width="110" height="22" rx="2" fill="#161b22"/>
+    <text x="99" y="544" text-anchor="middle" fill="#e6edf3" font-size="11" font-weight="400">T=10</text>
+    <rect x="158" y="528" width="150" height="22" rx="2" fill="#161b22"/>
+    <text x="233" y="544" text-anchor="middle" fill="#7ee787" font-size="11" font-weight="400">1,440</text>
+    <rect x="312" y="528" width="148" height="22" rx="2" fill="#161b22"/>
+    <text x="386" y="544" text-anchor="middle" fill="#f85149" font-size="11" font-weight="400">1,803</text>
+    <rect x="464" y="528" width="148" height="22" rx="2" fill="#161b22"/>
+    <text x="538" y="544" text-anchor="middle" fill="#d29922" font-size="11" font-weight="400">1,756</text>
+    <rect x="616" y="528" width="148" height="22" rx="2" fill="#161b22"/>
+    <text x="690" y="544" text-anchor="middle" fill="#e6edf3" font-size="11" font-weight="400">1.3× better</text>
+    <text x="776" y="544" fill="#484f58" font-size="9">Still close</text>
+    <rect x="44" y="550" width="110" height="22" rx="2" fill="#1c2128"/>
+    <text x="99" y="566" text-anchor="middle" fill="#e6edf3" font-size="11" font-weight="400">T=25</text>
+    <rect x="158" y="550" width="150" height="22" rx="2" fill="#1c2128"/>
+    <text x="233" y="566" text-anchor="middle" fill="#7ee787" font-size="11" font-weight="400">1,371</text>
+    <rect x="312" y="550" width="148" height="22" rx="2" fill="#1c2128"/>
+    <text x="386" y="566" text-anchor="middle" fill="#f85149" font-size="11" font-weight="400">3,729</text>
+    <rect x="464" y="550" width="148" height="22" rx="2" fill="#1c2128"/>
+    <text x="538" y="566" text-anchor="middle" fill="#d29922" font-size="11" font-weight="400">2,777</text>
+    <rect x="616" y="550" width="148" height="22" rx="2" fill="#1c2128"/>
+    <text x="690" y="566" text-anchor="middle" fill="#e6edf3" font-size="11" font-weight="400">2.7× better</text>
+    <text x="776" y="566" fill="#484f58" font-size="9">SKILL pulls ahead</text>
+    <rect x="44" y="572" width="110" height="24" rx="2" fill="#0d2a1a" stroke="#2ea043" stroke-width="0.8"/>
+    <text x="99" y="588" text-anchor="middle" fill="#e6edf3" font-size="12" font-weight="700">T=50</text>
+    <rect x="158" y="572" width="150" height="24" rx="2" fill="#0d2a1a" stroke="#2ea043" stroke-width="0.8"/>
+    <text x="233" y="588" text-anchor="middle" fill="#7ee787" font-size="12" font-weight="700">1,519</text>
+    <rect x="312" y="572" width="148" height="24" rx="2" fill="#2a0d0d" stroke="#f85149" stroke-width="0.8"/>
+    <text x="386" y="588" text-anchor="middle" fill="#f85149" font-size="12" font-weight="700">6,599</text>
+    <rect x="464" y="572" width="148" height="24" rx="2" fill="#161b22"/>
+    <text x="538" y="588" text-anchor="middle" fill="#d29922" font-size="12" font-weight="700">4,729</text>
+    <rect x="616" y="572" width="148" height="24" rx="2" fill="#0d2a1a" stroke="#2ea043" stroke-width="0.8"/>
+    <text x="690" y="588" text-anchor="middle" fill="#7ee787" font-size="12" font-weight="700">4.3× reduction!</text>
+    <text x="776" y="588" fill="#7ee787" font-size="9">YOU SAVE 5.1k chars</text>
+  </g>
+  <g Class="slide-up" style="animation-delay:1.0s">
+    <rect x="24" y="600" width="952" height="540" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+    <text x="44" y="630" fill="#e6edf3" font-size="14" font-weight="700">Per-Model API Benchmarks — 3 models, 9 runs, OpenRouter</text>
+    <text x="44" y="658" fill="#8b949e" font-size="12" font-weight="600">Total Tokens per Model by Horizon</text>
+    <rect x="44" y="668" width="1" height="140" fill="#30363d"/>
+    <rect x="44" y="808" width="440" height="1" fill="#30363d"/>
+    <text x="36" y="672.0" text-anchor="end" fill="#6e7681" font-size="9">30k</text>
+    <text x="36" y="700.0" text-anchor="end" fill="#6e7681" font-size="9">24k</text>
+    <text x="36" y="728.0" text-anchor="end" fill="#6e7681" font-size="9">18k</text>
+    <text x="36" y="756.0" text-anchor="end" fill="#6e7681" font-size="9">12k</text>
+    <text x="36" y="784.0" text-anchor="end" fill="#6e7681" font-size="9">6k</text>
+    <text x="36" y="812.0" text-anchor="end" fill="#6e7681" font-size="9">0</text>
+    <rect x="70" y="745.8213333333333" width="38" height="62.178666666666665" rx="2" fill="url(#glm)" Class="bar-grow" style="animation-delay:0.7s;transform-origin:89px 808px"/>
+    <text x="89" y="741.8213333333333" text-anchor="middle" fill="#e3b341" font-size="9">13.3k</text>
+    <rect x="124" y="668.476" width="38" height="139.524" rx="2" fill="url(#ds)" Class="bar-grow" style="animation-delay:0.75s;transform-origin:143px 808px"/>
+    <text x="143" y="664.476" text-anchor="middle" fill="#388bfd" font-size="9">29.9k</text>
+    <rect x="178" y="783.5186666666667" width="38" height="24.481333333333335" rx="2" fill="url(#mm)" Class="bar-grow" style="animation-delay:0.78s;transform-origin:197px 808px"/>
+    <text x="197" y="779.5186666666667" text-anchor="middle" fill="#a371f7" font-size="9">5.2k</text>
+    <rect x="194" y="712.282" width="38" height="95.71799999999999" rx="2" fill="url(#glm)" Class="bar-grow" style="animation-delay:0.81s;transform-origin:213px 808px"/>
+    <text x="213" y="708.282" text-anchor="middle" fill="#e3b341" font-size="9">20.5k</text>
+    <rect x="248" y="754.2633333333333" width="38" height="53.73666666666667" rx="2" fill="url(#ds)" Class="bar-grow" style="animation-delay:0.84s;transform-origin:267px 808px"/>
+    <text x="267" y="750.2633333333333" text-anchor="middle" fill="#388bfd" font-size="9">11.5k</text>
+    <rect x="302" y="773.1166666666667" width="38" height="34.88333333333333" rx="2" fill="url(#mm)" Class="bar-grow" style="animation-delay:0.87s;transform-origin:321px 808px"/>
+    <text x="321" y="769.1166666666667" text-anchor="middle" fill="#a371f7" font-size="9">7.5k</text>
+    <rect x="318" y="707.9653333333333" width="38" height="100.03466666666667" rx="2" fill="url(#glm)" Class="bar-grow" style="animation-delay:0.9s;transform-origin:337px 808px"/>
+    <text x="337" y="703.9653333333333" text-anchor="middle" fill="#e3b341" font-size="9">21.4k</text>
+    <rect x="372" y="788.3953333333334" width="38" height="19.604666666666667" rx="2" fill="url(#ds)" Class="bar-grow" style="animation-delay:0.93s;transform-origin:391px 808px"/>
+    <text x="391" y="784.3953333333334" text-anchor="middle" fill="#388bfd" font-size="9">4.2k</text>
+    <rect x="426" y="788.8713333333334" width="38" height="19.128666666666668" rx="2" fill="url(#mm)" Class="bar-grow" style="animation-delay:0.96s;transform-origin:445px 808px"/>
+    <text x="445" y="784.8713333333334" text-anchor="middle" fill="#a371f7" font-size="9">4.1k</text>
+    <text x="105" y="826" text-anchor="middle" fill="#8b949e" font-size="10" font-weight="400">T=10</text>
+    <text x="229" y="826" text-anchor="middle" fill="#8b949e" font-size="10" font-weight="400">T=25</text>
+    <text x="353" y="826" text-anchor="middle" fill="#8b949e" font-size="10" font-weight="600">T=50</text>
+    <rect x="70" y="840" width="10" height="10" rx="2" fill="url(#glm)"/>
+    <text x="84" y="850" fill="#e3b341" font-size="10">GLM 5.3 Flash</text>
+    <rect x="200" y="840" width="10" height="10" rx="2" fill="url(#ds)"/>
+    <text x="214" y="850" fill="#388bfd" font-size="10">DeepSeek V4 Pro</text>
+    <rect x="340" y="840" width="10" height="10" rx="2" fill="url(#mm)"/>
+    <text x="354" y="850" fill="#a371f7" font-size="10">MiniMax M3</text>
+    <rect x="44" y="868" width="440" height="40" rx="6" fill="#0d2a1a" stroke="#2ea043" stroke-width="0.8"/>
+    <text x="264" y="884" text-anchor="middle" fill="#7ee787" font-size="10" font-weight="600">✓ DeepSeek V4 Pro: 29.9k tokens at T=10 → just 4.2k at T=50</text>
+    <text x="264" y="900" text-anchor="middle" fill="#7ee787" font-size="9">SKILL.state teaches the model to be efficient — it LEARNS to write less</text>
+    <text x="510" y="658" fill="#8b949e" font-size="12" font-weight="600">Cumulative Tokens at T=50 — SKILL.state vs Baselines</text>
+    <rect x="510" y="668" width="1" height="140" fill="#30363d"/>
+    <rect x="510" y="808" width="442" height="1" fill="#30363d"/>
+    <text x="502" y="672.0" text-anchor="end" fill="#6e7681" font-size="9">55k</text>
+    <text x="502" y="707.6363636363636" text-anchor="end" fill="#6e7681" font-size="9">41k</text>
+    <text x="502" y="761.0909090909091" text-anchor="end" fill="#6e7681" font-size="9">20k</text>
+    <text x="502" y="786.5454545454545" text-anchor="end" fill="#6e7681" font-size="9">10k</text>
+    <text x="502" y="812.0" text-anchor="end" fill="#6e7681" font-size="9">0</text>
+    <rect x="540" y="673.8214545454546" width="72" height="134.17854545454546" rx="3" fill="#f85149" Class="bar-grow" style="animation-delay:1.0s;transform-origin:576px 808px"/>
+    <text x="576" y="669.8214545454546" text-anchor="middle" fill="#f85149" font-size="10" font-weight="600">52,713</text>
+    <text x="576" y="826" text-anchor="middle" fill="#8b949e" font-size="9">ReAct</text>
+    <text x="576" y="840" text-anchor="middle" fill="#484f58" font-size="8">Re-reads ALL prior turns</text>
+    <rect x="640" y="703.9825454545455" width="72" height="104.01745454545454" rx="3" fill="#d29922" Class="bar-grow" style="animation-delay:1.1s;transform-origin:676px 808px"/>
+    <text x="676" y="699.9825454545455" text-anchor="middle" fill="#e3b341" font-size="10" font-weight="600">40,864</text>
+    <text x="676" y="826" text-anchor="middle" fill="#8b949e" font-size="9">Memory</text>
+    <text x="676" y="840" text-anchor="middle" fill="#484f58" font-size="8">Summaries GROW faster</text>
+    <rect x="740" y="757.0272727272727" width="72" height="50.97272727272727" rx="3" fill="#2ea043" Class="bar-grow" style="animation-delay:1.2s;transform-origin:776px 808px"/>
+    <text x="776" y="753.0272727272727" text-anchor="middle" fill="#7ee787" font-size="10" font-weight="600">20,025</text>
+    <text x="776" y="826" text-anchor="middle" fill="#8b949e" font-size="9">SKILL.state</text>
+    <text x="776" y="840" text-anchor="middle" fill="#484f58" font-size="8">→ 2.6× SAVED!</text>
+    <rect x="840" y="782.7694545454546" width="72" height="25.230545454545453" rx="3" fill="#238636" Class="bar-grow" style="animation-delay:1.3s;transform-origin:876px 808px"/>
+    <text x="876" y="778.7694545454546" text-anchor="middle" fill="#7ee787" font-size="10" font-weight="600">9,912</text>
+    <text x="876" y="826" text-anchor="middle" fill="#8b949e" font-size="9">SKILL (API)</text>
+    <text x="876" y="840" text-anchor="middle" fill="#484f58" font-size="8">→ 5.3× SAVED!!</text>
+    <rect x="510" y="920" width="442" height="52" rx="8" fill="#0d2a1a" stroke="#2ea043" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="731" y="938" text-anchor="middle" fill="#7ee787" font-size="13" font-weight="700" Class="pulse">✓  T=50: 2.6× fewer tokens than ReAct  |  5.3× for API avg</text>
+    <text x="731" y="958" text-anchor="middle" fill="#8b949e" font-size="9">At T=200 (paper): 19× reduction — faster, cheaper, no stale-context</text>
+    <text x="510" y="1016" fill="#8b949e" font-size="11" font-weight="600">Wall Time at T=50 (seconds)</text>
+    <rect x="530" y="1032" width="1" height="80" fill="#30363d"/>
+    <line x1="530" y1="1112" x2="952" y2="1112" stroke="#30363d" stroke-width="0.5"/>
+    <text x="522" y="1036" text-anchor="end" fill="#484f58" font-size="8">450s</text>
+    <text x="522" y="1116" text-anchor="end" fill="#484f58" font-size="8">0</text>
+    <rect x="560" y="1082.3111111111111" width="80" height="29.68888888888889" rx="3" fill="url(#glm)" Class="bar-grow" style="animation-delay:1.4s;transform-origin:600px 1112px"/>
+    <text x="600" y="1078.3111111111111" text-anchor="middle" fill="#e3b341" font-size="10">167s</text>
+    <text x="600" y="1130" text-anchor="middle" fill="#8b949e" font-size="9">GLM 5.3 Flash (T10:112s)</text>
+    <text x="600" y="1144" text-anchor="middle" fill="#484f58" font-size="8">At T50: 12 steps, 21.4k tok.</text>
+    <rect x="710" y="1102.9333333333334" width="80" height="9.066666666666666" rx="3" fill="url(#ds)" Class="bar-grow" style="animation-delay:1.45s;transform-origin:750px 1112px"/>
+    <text x="750" y="1098.9333333333334" text-anchor="middle" fill="#388bfd" font-size="10">51s</text>
+    <text x="750" y="1130" text-anchor="middle" fill="#8b949e" font-size="9">DeepSeek V4 Pro (T10:451s)</text>
+    <text x="750" y="1144" text-anchor="middle" fill="#484f58" font-size="8">At T50: 2 steps, 4.2k tok.</text>
+    <rect x="860" y="1107.911111111111" width="80" height="4.0888888888888895" rx="3" fill="url(#mm)" Class="bar-grow" style="animation-delay:1.5s;transform-origin:900px 1112px"/>
+    <text x="900" y="1103.911111111111" text-anchor="middle" fill="#a371f7" font-size="10">23s</text>
+    <text x="900" y="1130" text-anchor="middle" fill="#8b949e" font-size="9">MiniMax M3 (T10:33s)</text>
+    <text x="900" y="1144" text-anchor="middle" fill="#484f58" font-size="8">At T50: 3 steps, 4.1k tok.</text>
+  </g>
+  <g Class="slide-up" style="animation-delay:1.6s">
+    <rect x="24" y="1160" width="952" height="42" rx="8" fill="#1c2128" stroke="#1f6feb" stroke-width="1"/>
+    <text x="500" y="1178" text-anchor="middle" fill="#79c0ff" font-size="11" font-weight="600">ℹ Mode B inside CLI host: still 0-turn drift recovery, restart survival, no rediscovery — token curve needs Mode C (MCP). Verified on 6 hosts.</text>
+    <text x="500" y="1194" text-anchor="middle" fill="#484f58" font-size="9">arXiv:2608.26263 — Badhe, Tiwari &amp;amp; Chung (EMNLP 2026)  |  python benchmarks/run_benchmarks.py</text>
+  </g>
+</svg>

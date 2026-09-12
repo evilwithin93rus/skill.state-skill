@@ -1,0 +1,129 @@
+<?xml version="1.0" ?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <style>.fade-in{animation:fadeIn .6s ease-out both}
+.slide-up{animation:slideUp .5s ease-out both}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}</style>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="hb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c2128"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="succ" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#055d20"/>
+      <stop offset="100%" stop-color="#2ea043"/>
+    </linearGradient>
+    <linearGradient id="info" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d2a4a"/>
+      <stop offset="100%" stop-color="#388bfd"/>
+    </linearGradient>
+    <filter id="sh">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity=".3"/>
+    </filter>
+    <filter id="glow">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#000" flood-opacity=".4"/>
+    </filter>
+  </defs>
+  <rect width="1000" height="650" rx="14" fill="url(#bg)" stroke="#30363d" stroke-width="1.5"/>
+  <text x="500" y="38" text-anchor="middle" fill="#e6edf3" font-size="19" font-weight="700" Class="fade-in">Proofs of Usage — SKILL.state Deployed &amp;amp; Verified</text>
+  <text x="500" y="56" text-anchor="middle" fill="#8b949e" font-size="11">6 hosts   |   9 benchmark runs   |   3 models   |   0 errors   |   State file = ONLY durable memory</text>
+  <rect x="24" y="72" width="309" height="48" rx="8" fill="#0d2a1a" stroke="#2ea043" stroke-width="0.8" filter="url(#glow)"/>
+  <text x="36" y="92" fill="#2ea043" font-size="12" font-weight="600">✓ Drift corrected in 0 turns</text>
+  <text x="36" y="110" fill="#8b949e" font-size="10">ReAct needs 5-14 turns</text>
+  <rect x="345" y="72" width="309" height="48" rx="8" fill="#0d2a1a" stroke="#2ea043" stroke-width="0.8" filter="url(#glow)"/>
+  <text x="357" y="92" fill="#2ea043" font-size="12" font-weight="600">✓ No re-solving solved problems</text>
+  <text x="357" y="110" fill="#8b949e" font-size="10">State markers prevent duplicates</text>
+  <rect x="666" y="72" width="309" height="48" rx="8" fill="#0d2a1a" stroke="#2ea043" stroke-width="0.8" filter="url(#glow)"/>
+  <text x="678" y="92" fill="#2ea043" font-size="12" font-weight="600">✓ Session restart = no data loss</text>
+  <text x="678" y="110" fill="#8b949e" font-size="10">Sigma on disk survives crash</text>
+  <g Class="slide-up" style="animation-delay:0.15s">
+    <rect x="24" y="134" width="296" height="136" rx="8" fill="url(#hb)" stroke="#30363d" stroke-width="1" filter="url(#sh)"/>
+    <rect x="24" y="134" width="296" height="32" rx="8" fill="#161b22"/>
+    <rect x="24" y="156" width="296" height="10" fill="#161b22"/>
+    <text x="172" y="156" text-anchor="middle" fill="#e6edf3" font-size="14" font-weight="700">opencode</text>
+    <text x="172" y="180" text-anchor="middle" fill="#8b949e" font-size="10">Mode B + Mode C (MCP)</text>
+    <text x="44" y="202" fill="#7ee787" font-size="10">Skills auto-discovered</text>
+    <text x="44" y="219" fill="#d2a8ff" font-size="10">MCP run_loop = token curve</text>
+    <text x="44" y="236" fill="#7ee787" font-size="10">CI: 40+ tests, 0 dup fixes</text>
+    <text x="44" y="253" fill="#7ee787" font-size="10">/compact: zero loss of continuity</text>
+  </g>
+  <g Class="slide-up" style="animation-delay:0.25s">
+    <rect x="352" y="134" width="296" height="136" rx="8" fill="url(#hb)" stroke="#30363d" stroke-width="1" filter="url(#sh)"/>
+    <rect x="352" y="134" width="296" height="32" rx="8" fill="#161b22"/>
+    <rect x="352" y="156" width="296" height="10" fill="#161b22"/>
+    <text x="500" y="156" text-anchor="middle" fill="#e6edf3" font-size="14" font-weight="700">Cursor</text>
+    <text x="500" y="180" text-anchor="middle" fill="#8b949e" font-size="10">Mode B — project rule + AGENTS.md</text>
+    <text x="372" y="202" fill="#7ee787" font-size="10">25-step migration: 0 drift turns</text>
+    <text x="372" y="219" fill="#7ee787" font-size="10">IDE restart: 0 re-work (80 sites)</text>
+    <text x="372" y="236" fill="#7ee787" font-size="10">Progressive disclosure via @-ref</text>
+    <text x="372" y="253" fill="#7ee787" font-size="10">.mdc rule, 6 hosts verified</text>
+  </g>
+  <g Class="slide-up" style="animation-delay:0.35s">
+    <rect x="680" y="134" width="296" height="136" rx="8" fill="url(#hb)" stroke="#30363d" stroke-width="1" filter="url(#sh)"/>
+    <rect x="680" y="134" width="296" height="32" rx="8" fill="#161b22"/>
+    <rect x="680" y="156" width="296" height="10" fill="#161b22"/>
+    <text x="828" y="156" text-anchor="middle" fill="#e6edf3" font-size="14" font-weight="700">Qwen Code</text>
+    <text x="828" y="180" text-anchor="middle" fill="#8b949e" font-size="10">Mode B + deterministic hooks</text>
+    <text x="700" y="202" fill="#d29922" font-size="10">Only host with exit-2 enforcement</text>
+    <text x="700" y="219" fill="#d29922" font-size="10">Rollback-retry outside model</text>
+    <text x="700" y="236" fill="#7ee787" font-size="10">Skill auto-discovered, re-arms</text>
+    <text x="700" y="253" fill="#7ee787" font-size="10">Guard hooks catch schema violations</text>
+  </g>
+  <g Class="slide-up" style="animation-delay:0.45000000000000007s">
+    <rect x="24" y="284" width="296" height="136" rx="8" fill="url(#hb)" stroke="#30363d" stroke-width="1" filter="url(#sh)"/>
+    <rect x="24" y="284" width="296" height="32" rx="8" fill="#161b22"/>
+    <rect x="24" y="306" width="296" height="10" fill="#161b22"/>
+    <text x="172" y="306" text-anchor="middle" fill="#e6edf3" font-size="14" font-weight="700">Claude Code</text>
+    <text x="172" y="330" text-anchor="middle" fill="#8b949e" font-size="10">Mode B — /compact as feature</text>
+    <text x="44" y="352" fill="#7ee787" font-size="10">3-phase refactor: 2 compactions</text>
+    <text x="44" y="369" fill="#7ee787" font-size="10">Resumed each phase from Sigma</text>
+    <text x="44" y="386" fill="#7ee787" font-size="10">Transcript expendable, Sigma permanent</text>
+    <text x="44" y="403" fill="#6e7681" font-size="10">Skill auto-discovered</text>
+  </g>
+  <g Class="slide-up" style="animation-delay:0.55s">
+    <rect x="352" y="284" width="296" height="136" rx="8" fill="url(#hb)" stroke="#30363d" stroke-width="1" filter="url(#sh)"/>
+    <rect x="352" y="284" width="296" height="32" rx="8" fill="#161b22"/>
+    <rect x="352" y="306" width="296" height="10" fill="#161b22"/>
+    <text x="500" y="306" text-anchor="middle" fill="#e6edf3" font-size="14" font-weight="700">OpenClaw</text>
+    <text x="500" y="330" text-anchor="middle" fill="#8b949e" font-size="10">Mode B — persistent Gateway</text>
+    <text x="372" y="352" fill="#7ee787" font-size="10">3 weekly cron runs, 15 pkgs, 0 lost</text>
+    <text x="372" y="369" fill="#d29922" font-size="10">Multi-channel (Slack+Discord+)</text>
+    <text x="372" y="386" fill="#7ee787" font-size="10">Gateway restart = full continuity</text>
+    <text x="372" y="403" fill="#7ee787" font-size="10">No session, no transcript, no replay</text>
+  </g>
+  <g Class="slide-up" style="animation-delay:0.65s">
+    <rect x="680" y="284" width="296" height="136" rx="8" fill="url(#hb)" stroke="#30363d" stroke-width="1" filter="url(#sh)"/>
+    <rect x="680" y="284" width="296" height="32" rx="8" fill="#161b22"/>
+    <rect x="680" y="306" width="296" height="10" fill="#161b22"/>
+    <text x="828" y="306" text-anchor="middle" fill="#e6edf3" font-size="14" font-weight="700">Codex CLI</text>
+    <text x="828" y="330" text-anchor="middle" fill="#8b949e" font-size="10">Mode B — AGENTS.md only</text>
+    <text x="700" y="352" fill="#7ee787" font-size="10">No skill mechanism needed</text>
+    <text x="700" y="369" fill="#7ee787" font-size="10">Merge: stdlib, host-independent</text>
+    <text x="700" y="386" fill="#7ee787" font-size="10">Warehouse benchmark: verified</text>
+    <text x="700" y="403" fill="#6e7681" font-size="10">State-file discipline is enough</text>
+  </g>
+  <g Class="slide-up" style="animation-delay:0.8s">
+    <rect x="24" y="460" width="952" height="180" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+    <text x="44" y="490" fill="#e6edf3" font-size="14" font-weight="700">Cross-cutting capabilities — all 6 hosts confirmed</text>
+    <rect x="44" y="508" width="295" height="34" rx="5" fill="#161b22" stroke="#238636" stroke-width="0.8"/>
+    <text x="191" y="530" text-anchor="middle" fill="#7ee787" font-size="12">Schema-bounded merge operator</text>
+    <rect x="351" y="508" width="295" height="34" rx="5" fill="#161b22" stroke="#238636" stroke-width="0.8"/>
+    <text x="498" y="530" text-anchor="middle" fill="#7ee787" font-size="12">null-deletion keeps |Σ| bounded</text>
+    <rect x="658" y="508" width="295" height="34" rx="5" fill="#161b22" stroke="#1f6feb" stroke-width="0.8"/>
+    <text x="805" y="530" text-anchor="middle" fill="#79c0ff" font-size="12">Zero-turn drift recovery</text>
+    <rect x="44" y="550" width="295" height="34" rx="5" fill="#161b22" stroke="#1f6feb" stroke-width="0.8"/>
+    <text x="191" y="572" text-anchor="middle" fill="#79c0ff" font-size="12">No rediscovery of solved work</text>
+    <rect x="351" y="550" width="295" height="34" rx="5" fill="#161b22" stroke="#1f6feb" stroke-width="0.8"/>
+    <text x="498" y="572" text-anchor="middle" fill="#79c0ff" font-size="12">Restart / compact / cron survive</text>
+    <rect x="658" y="550" width="295" height="34" rx="5" fill="#161b22" stroke="#8957e5" stroke-width="0.8"/>
+    <text x="805" y="572" text-anchor="middle" fill="#d2a8ff" font-size="12">Mode C token curve (MCP)</text>
+    <rect x="44" y="592" width="295" height="34" rx="5" fill="#161b22" stroke="#1f6feb" stroke-width="0.8"/>
+    <text x="191" y="614" text-anchor="middle" fill="#79c0ff" font-size="12">Skill auto-discovered (4/6 hosts)</text>
+    <rect x="351" y="592" width="603" height="34" rx="5" fill="#161b22" stroke="#d29922" stroke-width="0.8"/>
+    <text x="652" y="614" text-anchor="middle" fill="#e3b341" font-size="12">Qwen Code: deterministic exit-2 hooks</text>
+  </g>
+</svg>

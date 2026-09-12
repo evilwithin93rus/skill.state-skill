@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.agent/
+*.state.json
+benchmarks/**/runs/
+benchmarks/**/node_modules/
+benchmarks/**/.opencode/
+.venv/
+
